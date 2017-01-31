@@ -5,8 +5,16 @@ CREATE TABLE products(
 	item_id integer(11) not null auto_increment primary key,
     product_name varchar(50),
     department_name varchar(50),
-    price decimal(10,4),
-    stock_quanity integer(11)
+    price decimal(19,4),
+    stock_quantity integer(11)
+);
+
+CREATE table departments(
+	department_id integer(11) not null auto_increment primary key,
+    department_name varchar(50) not null,
+    over_head_costs decimal(19, 4),
+    total_sales integer(11)
+    
 );
 
 INSERT INTO products(product_name, department_name, price, stock_quantity)
@@ -21,4 +29,8 @@ VALUES ("Amazon Echo Dot", "Electronics", 49.99, 10000),
 ("Amazon Fire Tablet", "Electronics", 49.99, 14000),
 ("Bose QuietComfort 35 Wireless Headphones", "Electronics", 349.99, 2500),
 ("Samsung 55 inch 4k ULTRA HDTV", "Electronics", 799.99, 100);
+
+INSERT INTO products(product_name, department_name, price, stock_quantity)
+VALUES ("Pyrex 4-cup Measuring Cup", "Kitchen & Dining", 9.55, 0);
+
 
